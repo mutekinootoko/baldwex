@@ -15,7 +15,7 @@ lwdba is a great project for providing easy CURD db operations, but there are mo
 ...TODO
 
 <h3>Source</h3>
-Forked from <a href="http://sourceforge.net/p/lwdba/code/64/">r64</a>.
+Forked from tags 0.8.1.
 
 
 
