@@ -1,0 +1,38 @@
+<project name="lwdba" default="build" basedir=".">
+
+<property name="context" value="lwdba" />
+<property name="jar-file" value="${context}.jar" />
+
+<path id="classpath">
+	<fileset dir="lib" includes="*.jar"/>
+</path>
+
+<target name="prepare" description="Create build directories.">
+	<mkdir dir="build" />
+	<mkdir dir="dist" />
+</target>
+
+<target name="build" depends="prepare" description="Compile Java files." >
+	<javac srcdir="src" destdir="build" debug="on" target="1.5">
+		<include name="**/*.java" />
+		<classpath refid="classpath"/>
+	</javac>
+	<copy todir="build/">
+		<fileset dir="src" includes="**/*.properties"/>
+	</copy>
+</target>
+
+<target name="package" depends="build" description="Packages the lib file">
+	<echo message="Packaging the WAR...."/>
+	<delete file="dist/${jar-file}" />
+	<jar jarfile="dist/${jar-file}" >
+		<fileset dir="build" />
+	</jar>
+</target>
+
+<target name="clean" description="Removes the build and dist directories">
+	<delete dir="build" />
+	<delete dir="dist" />
+</target>
+
+</project>

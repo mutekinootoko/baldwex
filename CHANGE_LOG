@@ -1,0 +1,12 @@
+    REVISION 50
+        * support configure lwdba programmatically (tw.qing.lwdba.SQLCfgManager)
+
+    REVISION 29
+        * support MS SQL Server, unicode string 'N' prefix in SQL
+
+    REVISION 28
+        * fix the problem of passing a wrong argument into the constructor of MemcachedClient 
+
+    REVISION 27
+        * Remove the condition check for idxRow in sqlQuery ( paging version ). 
+        The condition check is unnecessary and raises a bug. 
